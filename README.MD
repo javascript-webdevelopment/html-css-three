@@ -30,6 +30,56 @@ This will allow you to add features into your app as you scale up with the view 
 
 It's easier to scale up then it is to reduce down.
 
+## Media Queries
 
-In CSS, we can use `media queries` to help create responsive design.
+In CSS, we can use `media queries` to help create a `responsive design`.
+
+A `media query` is a set of CSS rules that will dynamicaly change how our elements are being displayed to the screen based on the view port size of the device being used from the user that is accessing our page.
+
+The syntax for writing a media query looks like the following.
+
+```css
+@media (max-width: 500px) {
+    /* New Styles To Apply Based On Width */
+    .navbar {
+        background: tomato;
+    }
+}
+```
+
+We will define that it is a media query by using the `@media` statement. In the parenthesis, we will specify what width of the view port these sizes will be applied to. Inside the curly braces, we select the styles that will be applied when the condition inside the parenthsis is met.
+
+The value pased into the parenthesis is what will define our `break point`. We can use the break point to be specific as to when this styling gets applied. We will usually set a break point with a `min-width` or `max-width` value.
+
+![break points](images/breakpoints.png)
+
+### Min Width
+
+Min width is the value we can use to declare that this is the lowest point of screen size that the styles will be applied. This means that the styles will be applied when the view port width is higher than the `min-width` value.
+ 
+```css
+@media (min-width: 500px) {
+    /* Styles will only be applied when view port width is 500px and above */
+    .navbar {
+        background: orange;
+    }
+}
+```
+
+### Max Width
+
+Max width is the value we can use to declare what the highest point of the screen width is to apply the styling. This means that the styles will be applied if the view port width is smaller than the max width value.
+
+```css
+@media (max-width: 500px) {
+    /* Styles will only be applied when view port width is 500px and lower */
+    .navbar {
+        background: orange;
+    }
+}
+```
+
+You can use these interchangeably, but it's best just to stick with one or the other to make your code more clear.
+
+## Animations
 
