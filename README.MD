@@ -143,5 +143,55 @@ Now that we have created the animation, we now need to tell an element to use it
     animation-iteration-count: infinite;
     /* we can change the animations direction */
     animation-direction: alternate-reverse;
+    /* we can smooth our animations */
+    animation-timing-function: linear;
 }
+```
+
+Notice how these animations are always. We can set it up so that the animation will fire when a specific event like a click happens.
+
+We can conditionally add CSS classes to add the animation. We need to add all of the animation properties into it's own class.
+
+```css
+.square-spin {
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: linear;
+}
+```
+
+Then we will create state on our component and write a method that will change the value on state from true to false, or false to true. Then we will conditionally add the class to the element depending on what state is.
+
+```js
+export default class App extends Component {
+  constructor(){
+    super();
+
+    this.state = {
+      spinning: false
+    };
+
+  };
+
+  animate = () => {
+    this.setState({
+      spinning: !this.state.spinning
+    })
+  };
+
+  render() {
+    return (
+      <div>
+        <div className={
+          this.state.spinning ?
+          'square square-spin'
+          :
+          'square'} 
+          onClick={this.animate}></div>
+      </div>
+    )
+  }
+};
 ```

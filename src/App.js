@@ -8,6 +8,21 @@ import 'reset-css';
 import './App.css';
 
 export default class App extends Component {
+  constructor(){
+    super();
+
+    this.state = {
+      spinning: false
+    };
+
+  };
+
+  animate = () => {
+    this.setState({
+      spinning: !this.state.spinning
+    })
+  };
+
   render() {
     return (
       <div>
@@ -15,7 +30,12 @@ export default class App extends Component {
         <Navbar />
 
         {/* Square */}
-        <div className="square"></div>
+        <div className={
+          this.state.spinning ?
+          'square square-spin'
+          :
+          'square'} 
+          onClick={this.animate}></div>
 
         {/* Beating Heart */}
         <div className="heart"></div>

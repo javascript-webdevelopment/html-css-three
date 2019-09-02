@@ -4,18 +4,29 @@
     height: 75px;
     width: 75px;
     margin-top: 25px;
-    margin-left: 25px;
+    margin: 25px auto;
     background: peachpuff;
     /* tells what animation to use */
-    animation-name: spin;
+    /* animation-name: spin; */
     /* tell how long to run animation */
-    animation-duration: 2s;
+    /* animation-duration: 2s; */
     /* specify how many times the animation should run */
-    animation-iteration-count: infinite;
+    /* animation-iteration-count: infinite; */
     /* we can change the animations direction */
-    animation-direction: alternate-reverse;
-
+    /* animation-direction: alternate-reverse; */
+    /* we can smooth our animations */
+    /* animation-timing-function: linear; */
 }
+
+/* add the animation on click */
+.square-spin {
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: linear;
+}
+
 
 @keyframes spin {
     from {
