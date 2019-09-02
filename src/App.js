@@ -13,6 +13,13 @@ export default class App extends Component {
       <div>
         {/* Navbar */}
         <Navbar />
+
+        {/* Square */}
+        <div className="square"></div>
+
+        {/* Beating Heart */}
+        <div className="heart"></div>
+
       </div>
     )
   }

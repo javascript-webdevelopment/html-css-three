@@ -1,0 +1,74 @@
+/* Spinning Square */
+
+.square {
+    height: 75px;
+    width: 75px;
+    margin-top: 25px;
+    margin-left: 25px;
+    background: peachpuff;
+    /* tells what animation to use */
+    animation-name: spin;
+    /* tell how long to run animation */
+    animation-duration: 2s;
+    /* specify how many times the animation should run */
+    animation-iteration-count: infinite;
+    /* we can change the animations direction */
+    animation-direction: alternate-reverse;
+
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+/* Beating Heart */
+
+.heart {
+    background-color: red;
+    height: 70px;
+    width: 70px;
+    margin: 50px auto;
+    transform: rotate(-45deg);
+    /* what animation to use */
+    animation-name: heartbeat;
+    /* how long the animation should last */
+    animation-duration: 2s;
+    /* how many times to use the animation */
+    animation-iteration-count: infinite;
+}
+
+.heart:before, .heart:after {
+    content: '';
+    background-color: red;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart:before {
+    top: -30px;
+    left: 0px;
+}
+
+.heart:after {
+    top: 0px;
+    right: -30px;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(-45deg);
+    }
+    100% {
+        transform: scale(1) rotate(-45deg);
+    }
+}

@@ -83,3 +83,65 @@ You can use these interchangeably, but it's best just to stick with one or the o
 
 ## Animations
 
+Animations will transform elements on our web page. This is an excellent way to pull in a users attention and really attract them to our site, if they are done right.
+
+If they are not done right, it can be extremely distracting and unpleasent. Take a look at this site for a good example of what bad animations look like https://www.lingscars.com/.
+
+On the other hand, if animations are done right it will really make your site stand out and really pull in the users attention to your page. This site does an insanely good job at what killer animations can do https://www.theglyph.studio/#home.
+
+One way we can create animations is by using a `keyframe`.
+
+Keyframes are a great way that we can be specific when creating some sort of animation. we will use the `@` sign to declare a keyframe with a name to reference it as.
+
+```css
+@keyframes spin {
+    
+}
+```
+
+There are multiple ways that we can apply styles using a key frame. The first is `from` and `to`. This is where we can define a set of style rules from the start to the finish.
+
+```css
+@keyframes {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(1080deg);
+    }
+}
+```
+
+Then next way is using percentages inside of the animation, so we can be even more specific about how the animation will work.
+
+```css
+@keyframes {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+    0% {
+        transform: rotate(0deg);
+    }
+}
+```
+
+Now that we have created the animation, we now need to tell an element to use it.
+
+```css
+.square {
+    height: 75px;
+    width: 75px;
+    background: peachpuff;
+    /* tells what animation to use */
+    animation-name: spin;
+    /* tell how long to run animation */
+    animation-duration: 2s;
+    /* specify how many times the animation should run */
+    animation-iteration-count: infinite;
+    /* we can change the animations direction */
+    animation-direction: alternate-reverse;
+}
+```
