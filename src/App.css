@@ -83,3 +83,18 @@
         transform: scale(1) rotate(-45deg);
     }
 }
+
+/* Transition Circle */
+.transition-circle {
+    height: 50px;
+    width: 50px;
+    margin: 25px auto;
+    background: salmon;
+    /* transition property to change values */
+    transition: .2s
+}
+
+.transition-circle:hover {
+    transform: scale(1.1);
+    border-radius: 50%;
+}

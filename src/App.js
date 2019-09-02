@@ -25,7 +25,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app-container">
         {/* Navbar */}
         <Navbar />
 
@@ -40,6 +40,9 @@ export default class App extends Component {
         {/* Beating Heart */}
         <div className="heart"></div>
 
+        {/* Transition Square to Circle */}
+        <div className="transition-circle"></div>
+        
       </div>
     )
   }

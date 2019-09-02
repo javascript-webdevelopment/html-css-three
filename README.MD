@@ -91,6 +91,8 @@ On the other hand, if animations are done right it will really make your site st
 
 One way we can create animations is by using a `keyframe`.
 
+### Keyframes
+
 Keyframes are a great way that we can be specific when creating some sort of animation. we will use the `@` sign to declare a keyframe with a name to reference it as.
 
 ```css
@@ -102,12 +104,12 @@ Keyframes are a great way that we can be specific when creating some sort of ani
 There are multiple ways that we can apply styles using a key frame. The first is `from` and `to`. This is where we can define a set of style rules from the start to the finish.
 
 ```css
-@keyframes {
+@keyframes spin {
     from {
         transform: rotate(0deg);
     }
     to {
-        transform: rotate(1080deg);
+        transform: rotate(180deg);
     }
 }
 ```
@@ -115,7 +117,7 @@ There are multiple ways that we can apply styles using a key frame. The first is
 Then next way is using percentages inside of the animation, so we can be even more specific about how the animation will work.
 
 ```css
-@keyframes {
+@keyframes spin {
     0% {
         transform: rotate(0deg);
     }
@@ -195,3 +197,28 @@ export default class App extends Component {
   }
 };
 ```
+
+### Transitions
+
+Transitions are another way we can animate our elements. This time, the animation will just be a simple transition that will allow us to create smooth transitions.
+
+All we need to do is use the `transition` property on our css elements. We will just define how long we want to the transition to happen.
+
+```css
+/* Transition Circle */
+.transition-circle {
+    height: 50px;
+    width: 50px;
+    margin: 25px auto;
+    background: salmon;
+    /* transition property to change values */
+    transition: .2s
+}
+
+.transition-circle:hover {
+    transform: scale(1.1);
+    border-radius: 50%;
+}
+```
+
+This will allow us to create simple animations on events such as a hover.
